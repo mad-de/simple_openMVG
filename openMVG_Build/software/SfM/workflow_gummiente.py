@@ -3,12 +3,6 @@
 
 # A simple workflow for OpenMVG based on the openMVG tutorial
 
-# Indicate the openMVG binary directory
-# OPENMVG_SFM_BIN = "/home/martin/openMVG_Build/software/SfM"
-
-# Indicate the openMVG camera sensor width directory
-# CAMERA_SENSOR_WIDTH_DIRECTORY = "/home/martin/openMVG/src/software/SfM" + "/cameraSensorWidth"
-
 import commands
 import os
 import subprocess
@@ -50,7 +44,7 @@ camera_file_params = os.path.join(CAMERA_SENSOR_WIDTH_DIRECTORY, "cameraGenerate
 if not os.path.exists(matches_dir):
   os.mkdir(matches_dir)
 
-# -c = default pinhole camera
+# -c = 3 = default pinhole camera
 print ("1. Image listing - generate sfm_data.json") 
 pIntrisics = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_SfMInit_ImageListing"),  "-i", input_dir, "-o", matches_dir, "-d", camera_file_params, "-c", "3"] )
 pIntrisics.wait()
@@ -59,7 +53,7 @@ print ("2. Compute features")
 pFeatures = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_ComputeFeatures"),  "-i", matches_dir+"/sfm_data.json", "-o", matches_dir, "-m", "SIFT", "-f" , "1"] )
 pFeatures.wait()
 
-# -r = ratio (0.8 is recommended) -f = force to recompute data
+# -r = ratio (0.8 is recommended) -f = force to recompute data every time
 print ("3.1 SEQUENTIAL: Compute matches")
 pMatches = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_ComputeMatches"),  "-i", matches_dir+"/sfm_data.json", "-o", matches_dir, "-r", "0.8", "-f", "1"] )
 pMatches.wait()
