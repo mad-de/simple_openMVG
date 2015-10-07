@@ -1,16 +1,13 @@
 #!/usr/bin/python
 #! -*- encoding: utf-8 -*-
 
-# Python script to launch OpenMVG SfM tools on an image dataset
-#
-# usage : python tutorial_demo.py 
-# 
+# A simple workflow for OpenMVG based on the openMVG tutorial
 
 # Indicate the openMVG binary directory
-OPENMVG_SFM_BIN = "/home/martin/openMVG_Build/software/SfM"
+# OPENMVG_SFM_BIN = "/home/martin/openMVG_Build/software/SfM"
 
 # Indicate the openMVG camera sensor width directory
-CAMERA_SENSOR_WIDTH_DIRECTORY = "/home/martin/openMVG/src/software/SfM" + "/cameraSensorWidth"
+# CAMERA_SENSOR_WIDTH_DIRECTORY = "/home/martin/openMVG/src/software/SfM" + "/cameraSensorWidth"
 
 import commands
 import os
@@ -23,14 +20,19 @@ def get_parent_dir(directory):
 
 # !!! HIER DIE VARIABLEN ÄNDERN !!! 
 
-arbeitsverzeichnis = "/Gummiente"
+arbeitsverzeichnis = "/gummiente"
 image1 = "_MG_4800.JPG"
 image2 = "_MG_4801.JPG"
 
 # !!! ENDE DER VARIABLEN !!! 
 
+# Indicate the openMVG binary directory
+OPENMVG_SFM_BIN = os.path.dirname(os.path.abspath(__file__))
+# Indicate the openMVG camera sensor width directory
+CAMERA_SENSOR_WIDTH_DIRECTORY = os.path.dirname(os.path.abspath(__file__)) + "/cameraSensorWidth"
+# Indicate Input dir
 input_eval_dir = os.path.dirname(os.path.abspath(__file__)) + arbeitsverzeichnis
-
+# Indicate Output dir
 output_eval_dir = os.path.join(get_parent_dir(input_eval_dir) + arbeitsverzeichnis + "_out")
 
 if not os.path.exists(output_eval_dir):
@@ -79,7 +81,12 @@ pRecons.wait()
 
 print ("3.5. Export to PMVS")
 pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2PMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
-print ("Der PMVS Ordner wurde aus der Datei", reconstruction_dir+"/sfm_data.json", "in das Verzeichnis", reconstruction_dir, "erstellt")
+print ("Der PMVS Ordner wurde aus der Datei "+reconstruction_dir+"/sfm_data.json in das Verzeichnis "+reconstruction_dir+" erstellt")
+pRecons.wait()
+
+print ("3.6. Export to CMPMVS")
+pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2CMPMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
+print ("Der CMPMVS Ordner wurde aus der Datei "+reconstruction_dir+"/sfm_data.json in das Verzeichnis "+reconstruction_dir+" erstellt")
 pRecons.wait()
 
 # Reconstruction for the global SfM pipeline
@@ -107,7 +114,12 @@ pRecons.wait()
 
 print ("4.5 Export to PMVS")
 pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2PMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
-print ("Der PMVS Ordner wurde aus der Datei", reconstruction_dir+"/sfm_data.json", "in das Verzeichnis", reconstruction_dir, "erstellt")
+print ("Der PMVS Ordner wurde aus der Datei "+reconstruction_dir+"/sfm_data.json in das Verzeichnis "+reconstruction_dir+" erstellt")
+pRecons.wait()
+
+print ("4.6. Export to CMPMVS")
+pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2CMPMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
+print ("Der CMPMVS Ordner wurde aus der Datei "+reconstruction_dir+"/sfm_data.json in das Verzeichnis "+reconstruction_dir+" erstellt")
 pRecons.wait()
 
 print ("Workflow beendet")

@@ -8,7 +8,7 @@ Vorarbeit:
 - Image1 und Image2 stehen für die zwei Bilder mit den größten Übereinstimmungen (manuell zuzuordnen). Ändere die Dateinamen für diese beiden Bilder.
  
 - Terminal:
-~ cd openMVG_Build/software/SfM/
+~ cd ~/openMVG_Build/software/SfM/
 ~ python workflow_gummiente.py
 
 
