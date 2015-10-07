@@ -13,14 +13,14 @@ Vorarbeit:
 
 
 PMVS:
-- Kopiere den PMVS Unterordner aus dem *DATEINAME*_sequential oder *DATEINAME*_global Ordner aus dem neuen Ordner *DATEINAME_out* mit den meisten Informationen in den Ordner Programs/pmvs-2/data. Benenne ihn jetzt zum Beispiel in gummiente_sequential um.
+Jetzt wird die Datei in PMVS bearbeitet:
 - Terminal:
-~ cd Programs/pmvs-2/program/main 
-~ ./pmvs2 ../../data/gummiente_sequential/ pmvs_options.txt
+~ cd ~/Programs/pmvs-2/program/main 
+~ ./pmvs2 ../../../../openMVG_Build/software/SfM/gummiente_out/reconstruction_sequential/PMVS/ pmvs_options.txt
 
 Warten bis das Programm durchgelaufen ist
 
-~ cd ~/Programs/pmvs-2/data/gummiente_sequential/models
+~ cd ~/openMVG_Build/software/SfM/gummiente_out/reconstruction_sequential/PMVS/models
 ~ dir
 
 Output müsste sein: pmvs_options.txt.patch	pmvs_options.txt.ply  pmvs_options.txt.pset
@@ -29,3 +29,5 @@ Auf Ubuntu Systemen müssen wir häufig noch die Punkte durch Kommas ersetzen, d
 ~ sed -i "s/\./,/g" pmvs_options.txt.ply
 ~ sed -i "s/format ascii 1,0/format ascii 1.0/g" pmvs_options.txt.ply
 ~ meshlab pmvs_options.txt.ply
+
+Jetzt solltest du eine Pointcloud sehen.
