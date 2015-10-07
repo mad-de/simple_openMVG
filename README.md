@@ -13,6 +13,19 @@ Vorarbeit:
 
 
 PMVS:
-
+- Kopiere den PMVS Unterordner aus dem *DATEINAME*_sequential oder *DATEINAME*_global Ordner aus dem neuen Ordner *DATEINAME_out* mit den meisten Informationen in den Ordner Programs/pmvs-2/data. Benenne ihn jetzt zum Beispiel in gummiente_sequential um.
+- Terminal:
 ~ cd Programs/pmvs-2/program/main 
+~ ./pmvs2 ../../data/gummiente_sequential/ pmvs_options.txt
+
+Warten bis das Programm durchgelaufen ist
+
+~ cd ~/Programs/pmvs-2/data/gummiente_sequential/models
+~ dir
+
+Output müsste sein: pmvs_options.txt.patch	pmvs_options.txt.ply  pmvs_options.txt.pset
+
+Auf Ubuntu Systemen müssen wir häufig noch die Punkte durch Kommas ersetzen, damit Meshlab sie lesen kann:
+~ sed -i "s/\./,/g" pmvs_options.txt.ply
+sed -i "s/\./,/g" a.txt
 
