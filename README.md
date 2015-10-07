@@ -27,5 +27,5 @@ Output müsste sein: pmvs_options.txt.patch	pmvs_options.txt.ply  pmvs_options.t
 
 Auf Ubuntu Systemen müssen wir häufig noch die Punkte durch Kommas ersetzen, damit Meshlab sie lesen kann:
 ~ sed -i "s/\./,/g" pmvs_options.txt.ply
-sed -i "s/\./,/g" a.txt
-
+~ sed -i "s/format ascii 1,0/format ascii 1.0/g" pmvs_options.txt.ply
+~ meshlab pmvs_options.txt.ply
