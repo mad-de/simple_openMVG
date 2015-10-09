@@ -9,6 +9,12 @@ Execute /openMVG_Build/software/SfM/simple_openMVG
 
 Follow instructions.
 
+## What it currently can
+* Select input path
+* Add folder to process
+* Choose wether to export to PMVS / CMPMVS
+* Run workflow
+
 ## Further reading
 
 This project consists of a "frontend" (simple_openMVG) written in qt and a "backend" workflow written in python.

@@ -51,7 +51,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Please select the two pictures with the biggest match</string>
+        <string>Please select the two pictures with the biggest match:</string>
        </property>
       </widget>
      </item>
