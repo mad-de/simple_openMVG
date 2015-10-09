@@ -22,7 +22,7 @@ index_argv = 1;
 index_allstrings = 0;
 index_user_vars = 0;
 user_vars = {allstrings[0]: 'ERROR'};
-total_output = "Workflow beendet.";
+total_output = "Workflow finished.";
 
 # Durchlauf um Strings aus allstrings auszulesen und in dictionary user_vars mit den keys aus sys.argv zu speichern
 for num in sys.argv[1:]:
@@ -113,7 +113,7 @@ if export_pmvs == "false":
 else:
  print ("3.5. Export Sequential results to PMVS")
  pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2PMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
- total_output += ("The sequential PMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
+ total_output += ("\nThe sequential PMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
  pRecons.wait()
 
 if export_cmpmvs == "false":
@@ -121,7 +121,7 @@ if export_cmpmvs == "false":
 else:
  print ("3.6. Export Sequential results to CMPMVS")
  pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2CMPMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
- total_output += ("The sequential CMPMVS folder was created in the "+reconstruction_dir+"/CMPMVS directory")
+ total_output += ("\nThe sequential CMPMVS folder was created in the "+reconstruction_dir+"/CMPMVS directory")
  pRecons.wait()
 
 # Reconstruction for the global SfM pipeline
@@ -154,7 +154,7 @@ if export_pmvs == "false":
 else:
  print ("4.5 Export global results to PMVS")
  pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2PMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
- total_output += ("The global PMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
+ total_output += ("\nThe global PMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
  pRecons.wait()
 
 if export_cmpmvs == "false":
@@ -162,7 +162,7 @@ if export_cmpmvs == "false":
 else:
  print ("4.6. Export global results to CMPMVS")
  pRecons = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_openMVG2CMPMVS"),  "-i", reconstruction_dir+"/sfm_data.json", "-o", reconstruction_dir] )
- total_output += ("The global CMPMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
+ total_output += ("\nThe global CMPMVS folder was created in the "+reconstruction_dir+"/PMVS directory")
  pRecons.wait()
 
 print total_output
