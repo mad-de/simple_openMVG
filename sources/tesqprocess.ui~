@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>tesQProcess</class>
+ <widget class="QDialog" name="tesQProcess">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>495</width>
+    <height>338</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>tesQProcess</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Please select the input folder of your images:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>absolutePath()</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_browse_inputpath">
+       <property name="text">
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Please select the two pictures with the biggest match</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item row="3" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Image 1:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineImage1">
+       <property name="text">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_browse_image1">
+       <property name="text">
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Image 2:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineImage2">
+       <property name="text">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_browse_image2">
+       <property name="text">
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item row="4" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+  <widget class="QCheckBox" name="checkBox_export_PMVS" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>50</y>
+     <width>70</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Export to PMVS</string>
+   </property>
+  </widget>
+     </item>
+    </layout>
+   </item>
+
+
+  <item row="5" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+  <widget class="QCheckBox" name="checkBox_export_CMPMVS" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>50</y>
+     <width>70</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Export to CMPMVS</string>
+   </property>
+  </widget>
+     </item>
+    </layout>
+   </item>
+
+
+    <item row="6" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>60</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+
+    <item row="7" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Command:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineeCommand">
+       <property name="text">
+        <string>Init</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnProcess">
+       <property name="text">
+        <string>Begin workflow</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item row="8" column="0">
+    <widget class="QTextEdit" name="txtReport"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
