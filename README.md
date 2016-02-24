@@ -1,6 +1,9 @@
 # simple_openMVG
 A simple GUI for a workflow with openMVG for Linux.
 
+## Deprecated
+see [openMVG_gui](https://github.com/mad-de/openMVG_gui)
+
 ## Install instructions:
 
 Just copy the file in the openMVG_Build over your openMVG_Build installation.
