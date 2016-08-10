@@ -1,8 +1,7 @@
+# This repo is deprecated. GUI Development moved to https://github.com/open-anatomy/SfM_gui_for_openMVG/
+
 # simple_openMVG
 A simple GUI for a workflow with openMVG for Linux.
-
-## Deprecated
-see [openMVG_gui](https://github.com/mad-de/openMVG_gui)
 
 ## Install instructions:
 
